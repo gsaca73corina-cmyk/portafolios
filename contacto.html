@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - GUNAR Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="elite-tech-styles.css">
+  <link rel="stylesheet" href="contacto-styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>GUNAR</h1>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="galeria.html">Galería</a>
+        <a href="programacion.html">Programación</a>
+        <a href="sobre-mi.html">Sobre mí</a>
+        <a href="contacto.html" class="active">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="contact-hero">
+      <h1>Hablemos</h1>
+      <p>¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y colaborar contigo</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Información de Contacto</h2>
+        
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div class="contact-details">
+            <h3>Email</h3>
+            <p>gsaca73corina@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div class="contact-details">
+            <h3>Teléfono</h3>
+            <p>60608806</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-details">
+            <h3>Ubicación</h3>
+            <p>Bolivia</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <h3>Sígueme en</h3>
+          <div class="social-icons">
+            <a href="https://instagram.com/gunar" class="social-link" title="Instagram: @gunar">📸</a>
+            <a href="https://facebook.com/gunar.saca.corina" class="social-link" title="Facebook: Gunar Saca Corina">🔵</a>
+            <a href="https://wa.me/59160608806" class="social-link" title="WhatsApp">💬</a>
+            <a href="mailto:gsaca73corina@gmail.com" class="social-link" title="Email">✉️</a>
+            <a href="tel:60608806" class="social-link" title="Teléfono">☎️</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-container">
+        <h2>Envíame un Mensaje</h2>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">Nombre</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Apellido</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Asunto</label>
+            <select id="subject" name="subject" required>
+              <option value="">Selecciona un asunto</option>
+              <option value="proyecto">Nuevo Proyecto</option>
+              <option value="colaboracion">Colaboración</option>
+              <option value="consulta">Consulta General</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="6" required placeholder="Cuéntame sobre tu proyecto o idea..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Enviar Mensaje</span>
+            <span class="btn-loading" style="display: none;">Enviando...</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="availability-section">
+      <h2>Disponibilidad</h2>
+      <div class="availability-grid">
+        <div class="availability-item">
+          <div class="status-indicator available"></div>
+          <h3>Proyectos Freelance</h3>
+          <p>Disponible para nuevos proyectos</p>
+        </div>
+        <div class="availability-item">
+          <div class="status-indicator busy"></div>
+          <h3>Colaboraciones</h3>
+          <p>Ocupado hasta marzo 2025</p>
+        </div>
+        <div class="availability-item">
+          <div class="status-indicator available"></div>
+          <h3>Consultas</h3>
+          <p>Respondo en 24-48 horas</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 GUNAR | Hecho con pasión y creatividad</p>
+  </footer>
+
+  <script src="elite-tech-script.js"></script>
+  <script src="contacto-script.js"></script>
+</body>
+</html>

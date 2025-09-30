@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería - GUNAR Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="elite-tech-styles.css">
+  <link rel="stylesheet" href="galeria-styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>GUNAR</h1>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="galeria.html" class="active">Galería</a>
+        <a href="programacion.html">Programación</a>
+        <a href="sobre-mi.html">Sobre mí</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="gallery-hero">
+      <h1>Galería Completa</h1>
+      <p>Explora toda mi colección de trabajos creativos organizados por categorías</p>
+    </div>
+
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="photography">Fotografías</button>
+      <button class="filter-btn" data-filter="videos">Videos</button>
+      <button class="filter-btn" data-filter="art">Dibujos</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Las fotografías se cargarán dinámicamente -->
+    </div>
+  </main>
+
+  <!-- Modal para vista ampliada -->
+  <div class="image-modal" id="imageModal">
+    <div class="modal-backdrop" onclick="closeImageModal()"></div>
+    <div class="modal-image-container">
+      <button class="close-btn" onclick="closeImageModal()">×</button>
+      <img id="modalImage" src="" alt="">
+      <div class="image-info">
+        <h3 id="modalTitle"></h3>
+        <p id="modalCategory"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 GUNAR | Hecho con pasión y creatividad</p>
+  </footer>
+
+  <script src="elite-tech-script.js"></script>
+  <script src="galeria-script.js"></script>
+</body>
+</html>
