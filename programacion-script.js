@@ -57,6 +57,16 @@ const projects = [
   },
   // Juegos
   {
+    name: "Juego de Perros",
+    icon: "🐕",
+    techStack: "HTML5, CSS3, JavaScript",
+    description: "Juego interactivo con temática canina. Experiencia divertida y entretenida con mecánicas únicas, efectos visuales atractivos y sonidos inmersivos.",
+    category: "games",
+    demoLink: "https://gsaca73corina-cmyk.github.io/perros/",
+    codeLink: "https://github.com/gsaca73corina-cmyk/perros",
+    isNew: true
+  },
+  {
     name: "Predicción del Futuro",
     icon: "🔮",
     techStack: "HTML5, CSS3, JavaScript",
@@ -74,42 +84,7 @@ const projects = [
     demoLink: "https://gsaca73corina-cmyk.github.io/Zuno/main",
     codeLink: "https://github.com/gsaca73corina-cmyk/Zuno"
   },
-  {
-    name: "Juego de Plataformas",
-    icon: "🎮",
-    techStack: "Unity, C#",
-    description: "Juego de plataformas 2D con físicas realistas, sistema de puntuación, power-ups y múltiples niveles de dificultad.",
-    category: "games",
-    demoLink: "#",
-    codeLink: "#"
-  },
-  {
-    name: "Puzzle Game",
-    icon: "🧩",
-    techStack: "JavaScript, Canvas",
-    description: "Juego de rompecabezas web con mecánicas innovadoras, sistema de pistas y clasificación online.",
-    category: "games",
-    demoLink: "#",
-    codeLink: "#"
-  },
-  {
-    name: "RPG Adventure",
-    icon: "⚔️",
-    techStack: "Godot, GDScript",
-    description: "Juego de rol con sistema de combate por turnos, inventario, misiones y mundo abierto para explorar.",
-    category: "games",
-    demoLink: "#",
-    codeLink: "#"
-  },
-  {
-    name: "Racing Game",
-    icon: "🏎️",
-    techStack: "Unreal Engine, Blueprint",
-    description: "Juego de carreras 3D con físicas de vehículos realistas, pistas personalizables y modo multijugador.",
-    category: "games",
-    demoLink: "#",
-    codeLink: "#"
-  }
+
 ];
 
 // Cargar proyectos con filtros
@@ -121,7 +96,7 @@ function loadProjects(filter = 'all') {
   
   filteredProjects.forEach((project, index) => {
     const card = document.createElement('div');
-    card.className = 'project-card';
+    card.className = project.isNew ? 'project-card new-item' : 'project-card';
     card.setAttribute('data-category', project.category);
     
     const thumbnailUrl = project.demoLink !== '#' ? 
@@ -129,6 +104,7 @@ function loadProjects(filter = 'all') {
       null;
     
     card.innerHTML = `
+      ${project.isNew ? '<div class="new-badge">NUEVO</div>' : ''}
       ${thumbnailUrl ? `<div class="project-thumbnail">
         <img src="${thumbnailUrl}" alt="${project.name} preview" onerror="this.style.display='none'">
       </div>` : ''}
@@ -157,6 +133,15 @@ function loadProjects(filter = 'all') {
       card.style.transition = 'all 0.6s ease';
       card.style.opacity = '1';
       card.style.transform = 'translateY(0)';
+      
+      // Agregar sonidos si el audio está inicializado
+      if (audioContext) {
+        card.addEventListener('mouseenter', playHoverSound);
+        const links = card.querySelectorAll('.project-link');
+        links.forEach(link => {
+          link.addEventListener('click', playClickSound);
+        });
+      }
     }, index * 150);
   });
 }
@@ -176,6 +161,43 @@ function filterProjects(filter) {
   });
 }
 
+// Sistema de sonidos elegantes
+let audioContext;
+
+function initAudio() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+}
+
+function playClickSound() {
+  if (!audioContext) return;
+  const oscillator = audioContext.createOscillator();
+  const gainNode = audioContext.createGain();
+  oscillator.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+  oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+  oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
+  gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+  gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+  oscillator.start(audioContext.currentTime);
+  oscillator.stop(audioContext.currentTime + 0.1);
+}
+
+function playHoverSound() {
+  if (!audioContext) return;
+  const oscillator = audioContext.createOscillator();
+  const gainNode = audioContext.createGain();
+  oscillator.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+  oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
+  oscillator.type = 'sine';
+  gainNode.gain.setValueAtTime(0.05, audioContext.currentTime);
+  gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.05);
+  oscillator.start(audioContext.currentTime);
+  oscillator.stop(audioContext.currentTime + 0.05);
+}
+
 // Cargar proyectos al iniciar
 document.addEventListener('DOMContentLoaded', function() {
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -191,4 +213,20 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   loadProjects();
+  
+  // Agregar sonidos a filtros
+  filterBtns.forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+      if (audioContext) playHoverSound();
+    });
+    btn.addEventListener('click', () => {
+      if (audioContext) playClickSound();
+    });
+  });
+  
+  // Inicializar sonidos con primera interacción
+  document.addEventListener('click', function initSounds() {
+    initAudio();
+    document.removeEventListener('click', initSounds);
+  }, { once: true });
 });

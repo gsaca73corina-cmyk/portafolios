@@ -14,12 +14,21 @@
       <nav>
         <a href="index.html" class="active">Inicio</a>
         <a href="galeria.html">Galería</a>
-        <a href="programacion.html">Programación</a>
+        <a href="programacion.html" class="nav-with-indicator">Programación <span class="nav-indicator"></span></a>
         <a href="sobre-mi.html">Sobre mí</a>
         <a href="contacto.html">Contacto</a>
       </nav>
     </div>
   </header>
+
+  <!-- Tira de anuncio -->
+  <div class="announcement-banner">
+    <div class="announcement-content">
+      <span class="new-indicator"></span>
+      <span class="announcement-text">🚀 Se actualiza cada semana - ¡Espéralo!</span>
+      <button class="close-banner" onclick="closeBanner()">&times;</button>
+    </div>
+  </div>
 
   <main>
     <!-- Inicio Section -->
@@ -29,8 +38,67 @@
         <p>Bienvenido a mi portfolio digital - Explora mi trabajo y descubre lo que he creado</p>
       </div>
 
+      <!-- Estadísticas dinámicas -->
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" data-target="25">0</div>
+            <div class="stat-label">Proyectos Completados</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="3">0</div>
+            <div class="stat-label">Juegos Desarrollados</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="50">0</div>
+            <div class="stat-label">Diseños Creados</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="100">0</div>
+            <div class="stat-label">% Dedicación</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mensaje dinámico -->
+      <div class="dynamic-message">
+        <div class="message-content">
+          <span class="message-icon">💡</span>
+          <span class="message-text" id="dynamicText">Creando experiencias digitales únicas...</span>
+        </div>
+      </div>
+
       <div class="categories" id="categoriesContainer">
         <!-- Las categorías se cargarán aquí -->
+      </div>
+
+      <!-- Proyectos destacados -->
+      <div class="featured-section">
+        <h3>🌟 Proyectos Destacados</h3>
+        <div class="featured-grid">
+          <div class="featured-card" onclick="window.open('https://gsaca73corina-cmyk.github.io/perros/', '_blank')">
+            <div class="featured-icon">🐕</div>
+            <h4>Juego de Perros</h4>
+            <p>Mi último juego interactivo</p>
+            <span class="featured-badge">NUEVO</span>
+          </div>
+          <div class="featured-card" onclick="window.open('https://gsaca73corina-cmyk.github.io/pagina_prediccion/', '_blank')">
+            <div class="featured-icon">🔮</div>
+            <h4>Predicción del Futuro</h4>
+            <p>Aplicación mística y divertida</p>
+            <span class="featured-badge">POPULAR</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to action -->
+      <div class="cta-section">
+        <h3>¿Listo para explorar?</h3>
+        <p>Descubre todos mis proyectos y creaciones</p>
+        <div class="cta-buttons">
+          <button class="cta-btn primary" onclick="window.location.href='galeria.html'">Ver Galería</button>
+          <button class="cta-btn secondary" onclick="window.location.href='contacto.html'">Contactarme</button>
+        </div>
       </div>
     </div>
 
@@ -43,6 +111,7 @@
     <p>© 2025 GUNAR | Hecho con pasión y creatividad</p>
   </footer>
 
+  <script src="sounds.js"></script>
   <script src="script.js"></script>
   <script src="elite-tech-script.js"></script>
 </body>
