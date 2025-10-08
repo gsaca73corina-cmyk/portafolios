@@ -2,15 +2,6 @@
 const projects = [
   // Programas Utilitarios
   {
-    name: "Portfolio Web",
-    icon: "🌐",
-    techStack: "HTML, CSS, JavaScript",
-    description: "Portfolio personal con diseño moderno y efectos interactivos. Incluye galería de imágenes, formulario de contacto y navegación fluida.",
-    category: "programs",
-    demoLink: "#",
-    codeLink: "#"
-  },
-  {
     name: "App de Tareas",
     icon: "📝",
     techStack: "React, Node.js, MongoDB",
@@ -56,6 +47,28 @@ const projects = [
     codeLink: "#"
   },
   // Juegos
+  {
+  name: "Neon Sphere",
+  icon: "🔵",
+  techStack: "HTML5, CSS3, JavaScript",
+  description: "Juego de carreras en túneles 3D con controles intuitivos y música envolvente. Desarrollado con Three.js para una experiencia visual dinámica.",
+  category: "games",
+  demoLink: "https://gsaca73corina-cmyk.github.io/tunel_rush/juego",
+  codeLink: "https://github.com/gsaca73corina-cmyk/tunel_rush",
+  isNew: true
+  },
+
+    {
+    name: "Carrera de Autos",
+    icon: "🏎️",
+    techStack: "HTML5, CSS3, JavaScript",
+    description: "Juego de carreras en 3D con perspectiva dinámica y controles fluidos. Desarrollado con Three.js para ofrecer una experiencia visual inmersiva y velocidad realista.",
+    category: "games",
+    demoLink: "https://gsaca73corina-cmyk.github.io/carros/inicio.html",
+    codeLink: "https://github.com/gsaca73corina-cmyk/carros",
+    isNew: true
+  },
+
   {
     name: "Juego de Perros",
     icon: "🐕",
