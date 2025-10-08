@@ -1,51 +1,56 @@
 // Proyectos de programación separados por categoría
 const projects = [
   // Programas Utilitarios
+{
+  name: "App de Tareas",
+  icon: "📝",
+  techStack: "React, Node.js, MongoDB",
+  description: "Aplicación web para gestión de tareas con autenticación de usuarios, categorías personalizables y sincronización en tiempo real.",
+  category: "programs",
+  demoLink: "https://gsaca73corina-cmyk.github.io/gestor_tareas/main",
+  codeLink: "#"
+},
+
+ {
+  name: "E-commerce",
+  icon: "🛒",
+  techStack: "Vue.js, Express, MySQL",
+  description: "Plataforma de comercio electrónico con carrito de compras, pasarela de pagos y panel de administración completo.",
+  category: "programs",
+  demoLink: "https://gsaca73corina-cmyk.github.io/carrito_compras/carrito",
+  codeLink: "#"
+},
+
   {
-    name: "App de Tareas",
-    icon: "📝",
-    techStack: "React, Node.js, MongoDB",
-    description: "Aplicación web para gestión de tareas con autenticación de usuarios, categorías personalizables y sincronización en tiempo real.",
-    category: "programs",
-    demoLink: "#",
-    codeLink: "#"
-  },
+  name: "Chat en Tiempo Real",
+  icon: "💬",
+  techStack: "Socket.io, Node.js, Redis",
+  description: "Aplicación de chat con mensajería instantánea, salas privadas, notificaciones push e historial de conversaciones.",
+  category: "programs",
+  demoLink: "https://gsaca73corina-cmyk.github.io/chat/chat",
+  codeLink: "#"
+},
+
   {
-    name: "E-commerce",
-    icon: "🛒",
-    techStack: "Vue.js, Express, MySQL",
-    description: "Plataforma de comercio electrónico con carrito de compras, pasarela de pagos y panel de administración completo.",
-    category: "programs",
-    demoLink: "#",
-    codeLink: "#"
-  },
+  name: "API REST",
+  icon: "🔌",
+  techStack: "Python, FastAPI, PostgreSQL",
+  description: "API robusta para gestión de datos con autenticación JWT, documentación automática y rate limiting.",
+  category: "programs",
+  demoLink: "https://gsaca73corina-cmyk.github.io/api/api",
+  codeLink: "#"
+},
+
   {
-    name: "Chat en Tiempo Real",
-    icon: "💬",
-    techStack: "Socket.io, Node.js, Redis",
-    description: "Aplicación de chat con mensajería instantánea, salas privadas, notificaciones push e historial de conversaciones.",
-    category: "programs",
-    demoLink: "#",
-    codeLink: "#"
-  },
-  {
-    name: "API REST",
-    icon: "🔌",
-    techStack: "Python, FastAPI, PostgreSQL",
-    description: "API robusta para gestión de datos con autenticación JWT, documentación automática y rate limiting.",
-    category: "programs",
-    demoLink: "#",
-    codeLink: "#"
-  },
-  {
-    name: "Dashboard Analytics",
-    icon: "📊",
-    techStack: "D3.js, Python, Flask",
-    description: "Panel de control con visualizaciones interactivas, métricas en tiempo real y reportes exportables.",
-    category: "programs",
-    demoLink: "#",
-    codeLink: "#"
-  },
+  name: "Dashboard Analytics",
+  icon: "📊",
+  techStack: "D3.js, Python, Flask",
+  description: "Panel de control con visualizaciones interactivas, métricas en tiempo real y reportes exportables.",
+  category: "programs",
+  demoLink: "https://gsaca73corina-cmyk.github.io/finanzas/finanzas",
+  codeLink: "#"
+},
+
   // Juegos
   {
   name: "Neon Sphere",
