@@ -1,6 +1,16 @@
 // Proyectos de programación separados por categoría
 const projects = [
   // Programas Utilitarios
+
+  {
+  name: "Pagina web Reino Edas",
+  icon: "💌",
+  techStack: "Socket.io, Node.js, Redis",
+  description: "Comunícate al instante con otros nobles y héroes del reino. Salas privadas, notificaciones y registro de mensajes para recordar las gestas del día.",
+  category: "programs",
+  demoLink: "https://gsaca73corina-cmyk.github.io/reino_edas/#inicio",
+  codeLink: "#"
+},
 {
   name: "App de Tareas",
   icon: "📝",
@@ -31,7 +41,9 @@ const projects = [
   codeLink: "#"
 },
 
-  {
+
+
+{
   name: "API REST",
   icon: "🔌",
   techStack: "Python, FastAPI, PostgreSQL",
